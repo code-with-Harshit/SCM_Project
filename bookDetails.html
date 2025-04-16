@@ -100,3 +100,14 @@
           const price = data.saleInfo.retailPrice
             ? `${data.saleInfo.retailPrice.amount} ${data.saleInfo.retailPrice.currencyCode}`
             : "Not available";
+
+        document.getElementById('title').textContent = title;
+        document.getElementById('authors').textContent = `Authors: ${authors}`;
+        document.getElementById('thumbnail').src = thumbnail;
+        document.getElementById('description').textContent = description;
+        document.getElementById('price').textContent = `Price: ${price}`;
+
+        document.getElementById('add-to-cart').addEventListener('click', () => {
+          alert(`${title} added to cart!`);
+          });
+
