@@ -92,3 +92,11 @@
         try {
           const response = await fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`);
           const data = await response.json();
+
+          const title = data.volumeInfo.title || "No Title";
+          const authors = data.volumeInfo.authors ? data.volumeInfo.authors.join(', ') : "No Authors";
+          const thumbnail = data.volumeInfo.imageLinks?.thumbnail || "https://via.placeholder.com/200";
+          const description = data.volumeInfo.description || "No description available.";
+          const price = data.saleInfo.retailPrice
+            ? `${data.saleInfo.retailPrice.amount} ${data.saleInfo.retailPrice.currencyCode}`
+            : "Not available";
