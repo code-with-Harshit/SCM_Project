@@ -1,0 +1,25 @@
+body 
+  {
+      z-index: 1;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+  }
+
+  .header 
+  {
+      background-color: #333;
+      color: white; 
+      padding: 10px 0;
+  }
+
+  .header1 
+  {
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px; 
+      margin: 0 auto; 
+      padding: 0 20px; 
+  }
