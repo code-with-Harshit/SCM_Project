@@ -208,6 +208,124 @@ body
 {
     scroll-snap-align: center;
 }
+p 
+{
+    margin: 10px 0; 
+    text-align: center; 
+}
+
+p a 
+{
+    color: #ff5a5f; 
+    text-decoration: none; 
+}
+
+p a:hover 
+{
+    text-decoration: underline; 
+}
+
+.home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px 20px;
+    background: fixed;
+    background-image: url("https://miro.medium.com/v2/resize:fit:5120/1*42ebJizcUtZBNIZPmmMZ5Q.jpeg"); 
+    color: #ffffff;
+    width: auto;
+    
+}
+
+
+.btn { 
+    background-color: red;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.btn:hover {
+    background-color: #ff3b3f;
+    cursor: pointer;
+    box-shadow: 2px 1px 5px grey;
+}
+
+
+.home .icon-container {
+    background-color: #333333;
+    margin-bottom: 10px;
+}
+
+
+.icon-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+.icon-item{
+    margin: 10px;
+    padding: 20px;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.icon-item i{
+    color: #ff5a5f;
+    font-size: 22px;
+}
+.icon-content{
+    color: #ffffff;
+    font-size: 18px;
+    text-align: center;
+}
+
+.features {
+    padding: 50px 0;
+    background-color: #444444;   
+    color: #ffffff;
+}
+
+.features .heading {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #ff5a5f;
+}
+
+
+.featured-slider {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+/* Styling for the .box */
+.featured-slider .box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  color: #333;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 15px;
+  max-height: 550px;
+  width: 270px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  justify-content: space-between;
+  transition: transform 0.3s;
+}
+
+.featured-slider .box:hover {
+  transform: translateY(-10px);
+}
 
 
 
