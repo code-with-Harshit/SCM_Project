@@ -876,7 +876,6 @@ p a:hover
     color: #666;
   }
   
-  /* Optional: Add scroll bar styling */
   #result-container::-webkit-scrollbar {
     width: 8px;
   }
