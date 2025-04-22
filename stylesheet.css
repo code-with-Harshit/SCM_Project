@@ -825,6 +825,67 @@ p a:hover
   }
 
 
+  /* Style for the results container */
+  #result-container {
+    position: absolute; /* Position it relative to the search bar */
+    top: 60px; /* Adjust to place below the search bar */
+    left: 0px; /* Adjust to align with the search bar */
+    max-width: 300px; /* Limit the width */
+    max-height: 200px; /* Limit the height for scrolling */
+    overflow-y: auto; /* Allow scrolling for long lists */
+    background-color: white; /* Set a contrasting background */
+    border: 1px solid #ccc; /* Add a subtle border */
+    border-radius: 8px; /* Smooth corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a shadow for depth */
+    z-index: 1000; /* Ensure it appears above other elements */
+  }
+  
+  /* Style for individual book results */
+  .book-result {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    cursor: pointer; /* Add pointer for interactivity */
+    transition: background-color 0.2s; /* Smooth hover effect */
+  }
+  
+  .book-result:hover {
+    background-color: #f0f0f0; /* Highlight on hover */
+  }
+  
+  /* Style for book thumbnail */
+  .book-result img {
+    width: 40px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px; /* Rounded thumbnail corners */
+  }
+  
+  /* Style for text (title and author) */
+  .book-result h3 {
+    font-size: 16px;
+    margin: 0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  .book-result p {
+    font-size: 14px;
+    margin: 0;
+    color: #666;
+  }
+  
+  /* Optional: Add scroll bar styling */
+  #result-container::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  #result-container::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+  }
+  
 
 
 
