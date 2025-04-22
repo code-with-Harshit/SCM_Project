@@ -23,3 +23,24 @@ body
       margin: 0 auto; 
       padding: 0 20px; 
   }
+  .book-result {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+  }
+
+  .book-result img {
+    height: 60px;
+    width: auto;
+    border-radius: 5px;
+  }
+
+  .book-result h3 {
+    font-size: 16px;
+    margin: 0;
+  }
+
+
