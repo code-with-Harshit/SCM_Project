@@ -144,3 +144,19 @@ document.getElementById('search-box').addEventListener('input', async (e) => {
         totalAmount += itemPrice;
         totalAmountDisplay.textContent = totalAmount.toFixed(2);
     }
+    document.addEventListener("DOMContentLoaded", () => {
+        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        addToCartButtons.forEach(button => {
+            button.addEventListener("click", (event) => {
+                const featuredContent = event.target.closest('.featured-content');
+                const itemName = featuredContent.querySelector('.book-name').textContent;
+                const itemPrice = parseFloat(featuredContent.querySelector('.price').textContent.replace('$', '')); 
+    
+                addCartItem(itemName, itemPrice);
+    
+                cartCount++; 
+                updateCartCount();
+                openCart();
+            });
+        });
+    });
