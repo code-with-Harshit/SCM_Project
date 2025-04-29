@@ -25,3 +25,21 @@ document.getElementById('search-box').addEventListener('input', async (e) => {
 		  <p>${authors}</p>
 		</div>`;
 	}).join('');
+
+    document.querySelectorAll('.book-result').forEach(bookCard => {
+        bookCard.addEventListener('click', () => {
+          const bookId = bookCard.getAttribute('data-id');
+          window.open(`bookDetails.html?bookId=${bookId}`, '_parent');
+        });
+      });
+    }
+  
+  document.addEventListener('click', (event) => {
+      const searchBox = document.getElementById('search-box');
+      const resultContainer = document.getElementById('result-container');
+      if (!searchBox.contains(event.target) && !resultContainer.contains(event.target)) {
+        resultContainer.style.display = 'none'; 
+      } else {
+        resultContainer.style.display = 'block'; 
+      }
+    });
