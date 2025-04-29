@@ -43,3 +43,50 @@ document.getElementById('search-box').addEventListener('input', async (e) => {
         resultContainer.style.display = 'block'; 
       }
     });
+    document.addEventListener('click', (event) => {
+        const searchBox = document.getElementById('search-box');
+        const resultContainer = document.getElementById('result-container');
+        if (!searchBox.contains(event.target) && !resultContainer.contains(event.target)) {
+          resultContainer.style.display = 'none'; 
+        } else {
+          resultContainer.style.display = 'block'; 
+        }
+      });
+      
+      function getBookName(button) {
+        const box = button.closest(".box"); 
+            const bookNameElement = box.querySelector(".book-name");
+        const searchBox = document.getElementById("search-box");
+        
+        if (bookNameElement && searchBox) {
+            const bookNameText = bookNameElement.textContent || bookNameElement.innerText;
+    
+            searchBox.value = bookNameText;
+    
+            const inputEvent = new Event("input", { bubbles: true });
+            searchBox.dispatchEvent(inputEvent);
+        } else {
+            console.error("Book name or search box not found.");
+        }
+    }
+    
+    const cartIconBtn = document.querySelector(".cartIcon-btn");
+    const cartItemsContainer = document.querySelector('#cart-items tbody');
+    const cartCountDisplay = document.querySelector('.cart-count');
+    const totalAmountDisplay = document.getElementById('total-amount');
+    const closeCartButton = document.getElementById('close-cart');
+    const checkoutButton = document.getElementById('checkout');
+    const shoppingCart = document.querySelector('.shopping-cart');
+    const cartIcon = document.getElementById('cart-icon');
+    
+    let cartCount = 0;
+    let totalAmount = 0;
+    
+    cartIconBtn.addEventListener('click', () => {
+        openCart();
+    });
+    
+    cartIcon.addEventListener('click', () => {
+        openCart();
+    });
+    
