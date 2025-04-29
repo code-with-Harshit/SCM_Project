@@ -90,3 +90,57 @@ document.getElementById('search-box').addEventListener('input', async (e) => {
         openCart();
     });
     
+    function updateCartCount() {
+        cartCountDisplay.textContent = cartCount;
+    }
+    
+    function openCart() {
+        shoppingCart.classList.add('active');
+    }
+    
+    closeCartButton.addEventListener('click', () => {
+        shoppingCart.classList.remove('active');
+    });
+    
+    checkoutButton.addEventListener('click', () => {
+        if (cartCount > 0) {
+            alert(`Checking out ${cartCount} items for a total of $${totalAmount.toFixed(2)}.`);
+            cartItemsContainer.innerHTML = '';
+            cartCount = 0;
+            totalAmount = 0;
+            updateCartCount();
+            totalAmountDisplay.textContent = '0.00';
+            shoppingCart.classList.remove('active');
+        } else {
+            alert(`Your cart is empty!`);
+        }
+    });
+    
+    function addCartItem(itemName, itemPrice) {
+        const existingRow = Array.from(cartItemsContainer.rows).find(row => row.cells[0].textContent === itemName);
+        
+        if (existingRow) {
+            
+            const quantityCell = existingRow.cells[2];
+            const totalCell = existingRow.cells[3];
+            
+            let quantity = parseInt(quantityCell.textContent) + 1;
+            quantityCell.textContent = quantity;
+            
+            const total = (itemPrice * quantity).toFixed(2);
+            totalCell.textContent = total;
+            
+        } else {
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+                <td>${itemName}</td>
+                <td>$${itemPrice.toFixed(2)}</td>
+                <td>1</td>
+                <td>$${itemPrice.toFixed(2)}</td>
+            `;
+            cartItemsContainer.appendChild(newRow);
+        }
+    
+        totalAmount += itemPrice;
+        totalAmountDisplay.textContent = totalAmount.toFixed(2);
+    }
